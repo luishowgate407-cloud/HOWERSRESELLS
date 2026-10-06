@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HowersResells</title>
+<meta name="description" content="HowersResells - premium supplier information for resellers.">
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #050505;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    height: 70px;
+    padding: 0 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(5,5,5,0.94);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid #1d1d1d;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: #999;
+}
+
+nav ul {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+}
+
+nav a {
+    color: #888;
+    text-decoration: none;
+    font-size: 14px;
+    transition: .2s;
+}
+
+nav a:hover {
+    color: #fff;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 100px 7%;
+
+    background:
+        radial-gradient(
+            circle at 75% 30%,
+            #171717 0%,
+            #050505 40%
+        );
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.small-label {
+    display: inline-block;
+
+    border: 1px solid #292929;
+    border-radius: 50px;
+
+    padding: 7px 13px;
+
+    color: #888;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 9vw, 105px);
+    line-height: .9;
+    letter-spacing: -7px;
+
+    margin-bottom: 30px;
+}
+
+.hero h1 span {
+    color: #888;
+}
+
+.hero p {
+    max-width: 600px;
+
+    color: #888;
+    font-size: 18px;
+
+    margin-bottom: 35px;
+}
+
+.button {
+    display: inline-block;
+
+    padding: 14px 23px;
+
+    border-radius: 7px;
+
+    background: #fff;
+    color: #000;
+
+    font-size: 14px;
+    font-weight: 900;
+
+    text-decoration: none;
+
+    transition: .2s;
+}
+
+.button:hover {
+    background: #ddd;
+    transform: translateY(-2px);
+}
+
+.button.dark {
+    margin-left: 8px;
+
+    background: #101010;
+    color: #fff;
+
+    border: 1px solid #292929;
+}
+
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+section {
+    padding: 90px 7%;
+}
+
+.label {
+    color: #777;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.title {
+    font-size: 44px;
+    letter-spacing: -2px;
+
+    margin-top: 8px;
+}
+
+.description {
+    max-width: 600px;
+
+    color: #777;
+
+    margin-top: 14px;
+}
+
+
+/* =========================
+   PRODUCTS
+========================= */
+
+.products {
+    background: #090909;
+}
+
+.product-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-top: 40px;
+}
+
+.product {
+    background: #0d0d0d;
+
+    border: 1px solid #222;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    transition: .25s;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+
+    border-color: #444;
+}
+
+.product-image {
+    height: 190px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #111;
+
+    color: #444;
+
+    font-size: 45px;
+}
+
+.product-info {
+    padding: 24px;
+}
+
+.product h3 {
+    font-size: 19px;
+
+    margin-bottom: 8px;
+}
+
+.product p {
+    color: #777;
+
+    font-size: 13px;
+
+    min-height: 42px;
+
+    margin-bottom: 20px;
+}
+
+.price {
+    font-size: 22px;
+    font-weight: 900;
+
+    margin-bottom: 17px;
+}
+
+.buy {
+    width: 100%;
+
+    padding: 13px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #fff;
+    color: #000;
+
+    font-weight: 900;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.buy:hover {
+    background: #ddd;
+}
+
+
+/* =========================
+   HOW IT WORKS
+========================= */
+
+.steps {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-top: 40px;
+}
+
+.step {
+    padding: 27px;
+
+    border: 1px solid #222;
+    border-radius: 14px;
+
+    background: #0b0b0b;
+}
+
+.step-number {
+    color: #666;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    margin-bottom: 20px;
+}
+
+.step h3 {
+    margin-bottom: 8px;
+}
+
+.step p {
+    color: #777;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-box {
+    max-width: 800px;
+
+    margin-top: 35px;
+
+    padding: 30px;
+
+    background: #0c0c0c;
+
+    border: 1px solid #222;
+
+    border-radius: 14px;
+}
+
+.about-box p {
+    color: #888;
+
+    font-size: 14px;
+
+    margin-bottom: 15px;
+}
+
+.about-box p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta {
+    text-align: center;
+
+    background: #fff;
+    color: #000;
+}
+
+.cta h2 {
+    font-size: 45px;
+    letter-spacing: -3px;
+
+    margin-bottom: 12px;
+}
+
+.cta p {
+    max-width: 550px;
+
+    margin: auto;
+
+    color: #555;
+
+    margin-bottom: 25px;
+}
+
+.cta .button {
+    background: #000;
+    color: #fff;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 30px 7%;
+
+    display: flex;
+    justify-content: space-between;
+
+    color: #555;
+
+    font-size: 12px;
+
+    border-top: 1px solid #1d1d1d;
+}
+
+
+/* =========================
+   PURCHASE NOTIFICATION
+========================= */
+
+.purchase-notification {
+
+    position: fixed;
+
+    left: 20px;
+    bottom: 20px;
+
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    max-width: 310px;
+
+    padding: 13px 16px;
+
+    background: #111;
+
+    border: 1px solid #333;
+
+    border-radius: 10px;
+
+    box-shadow: 0 10px 40px rgba(0,0,0,.5);
+
+    transform: translateY(150px);
+
+    opacity: 0;
+
+    transition: .4s;
+}
+
+.purchase-notification.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.notification-dot {
+    width: 9px;
+    height: 9px;
+
+    background: #fff;
+
+    border-radius: 50%;
+
+    flex-shrink: 0;
+}
+
+.notification-text {
+    font-size: 12px;
+    color: #aaa;
+}
+
+.notification-text strong {
+    color: #fff;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:800px) {
+
+    nav ul {
+        display: none;
+    }
+
+    .hero {
+        min-height: 580px;
+    }
+
+    .hero h1 {
+        letter-spacing: -4px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .button {
+        display: block;
+        text-align: center;
+
+        margin: 9px 0 !important;
+    }
+
+    .product-grid,
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 70px 7%;
+    }
+
+    .title {
+        font-size: 36px;
+    }
+
+    .cta h2 {
+        font-size: 36px;
+    }
+
+    footer {
+        display: block;
+    }
+
+    footer div + div {
+        margin-top: 8px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAV
+========================= -->
+
+<nav>
+
+    <a href="#home" class="logo">
+        Howers<span>Resells</span>
+    </a>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#about">About</a></li>
+    </ul>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="small-label">
+            HOWERSRESELLS
+        </div>
+
+        <h1>
+            RESSELL<br>
+            <span>SMARTER.</span>
+        </h1>
+
+        <p>
+            Premium supplier information for resellers.
+            Find useful sourcing information and grow your
+            reselling business from one simple place.
+        </p>
+
+        <a href="#products" class="button">
+            Browse products
+        </a>
+
+        <a href="#about" class="button dark">
+            Learn more
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PRODUCTS
+========================= -->
+
+<section class="products" id="products">
+
+    <div class="label">
+        PRODUCTS
+    </div>
+
+    <h2 class="title">
+        Choose your supplier pack.
+    </h2>
+
+    <p class="description">
+        Access supplier information through simple digital products.
+    </p>
+
+
+    <div class="product-grid">
+
+
+        <!-- PRODUCT 1 -->
+
+        <div class="product">
+
+            <div class="product-image">
+                📦
+            </div>
+
+            <div class="product-info">
+
+                <h3>
+                    Starter Supplier List
+                </h3>
+
+                <p>
+                    A beginner-friendly supplier list for people
+                    starting their reselling journey.
+                </p>
+
+                <div class="price">
+                    £4.99
+                </div>
+
+                <button
+                    class="buy"
+                    onclick="startPurchase('Starter Supplier List')"
+                >
+                    Buy now
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 2 -->
+
+        <div class="product">
+
+            <div class="product-image">
+                🗂️
+            </div>
+
+            <div class="product-info">
+
+                <h3>
+                    Reseller Supplier Pack
+                </h3>
+
+                <p>
+                    A larger collection of supplier information
+                    organised for active resellers.
+                </p>
+
+                <div class="price">
+                    £9.99
+                </div>
+
+                <button
+                    class="buy"
+                    onclick="startPurchase('Reseller Supplier Pack')"
+                >
+                    Buy now
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 3 -->
+
+        <div class="product">
+
+            <div class="product-image">
+                ⭐
+            </div>
+
+            <div class="product-info">
+
+                <h3>
+                    Ultimate Supplier Pack
+                </h3>
+
+                <p>
+                    The complete HowersResells supplier collection
+                    for serious resellers.
+                </p>
+
+                <div class="price">
+                    £19.99
+                </div>
+
+                <button
+                    class="buy"
+                    onclick="startPurchase('Ultimate Supplier Pack')"
+                >
+                    Buy now
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     HOW IT WORKS
+========================= -->
+
+<section id="how">
+
+    <div class="label">
+        HOW IT WORKS
+    </div>
+
+    <h2 class="title">
+        Simple. Fast. Digital.
+    </h2>
+
+
+    <div class="steps">
+
+        <div class="step">
+
+            <div class="step-number">
+                01
+            </div>
+
+            <h3>
+                Choose a product
+            </h3>
+
+            <p>
+                Select the supplier pack that suits your
+                reselling needs.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                02
+            </div>
+
+            <h3>
+                Pay securely
+            </h3>
+
+            <p>
+                Complete your purchase through the payment
+                method connected to the website.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                03
+            </div>
+
+            <h3>
+                Receive your product
+            </h3>
+
+            <p>
+                Your digital supplier information is delivered
+                after your payment is successfully completed.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+    <div class="label">
+        ABOUT
+    </div>
+
+    <h2 class="title">
+        Built for resellers.
+    </h2>
+
+    <div class="about-box">
+
+        <p>
+            HowersResells is a simple digital platform focused
+            on helping resellers find useful supplier information.
+        </p>
+
+        <p>
+            The goal is to keep sourcing simple, organised and
+            accessible without unnecessary clutter.
+        </p>
+
+        <p>
+            Only supplier and business information that you have
+            permission to distribute should be published or sold.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta">
+
+    <h2>
+        Start reselling smarter.
+    </h2>
+
+    <p>
+        Explore the available HowersResells products.
+    </p>
+
+    <a href="#products" class="button">
+        View products
+    </a>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div>
+        © 2026 HowersResells
+    </div>
+
+    <div>
+        All rights reserved.
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     PURCHASE NOTIFICATION
+========================= -->
+
+<div
+    id="purchaseNotification"
+    class="purchase-notification"
+>
+
+    <div class="notification-dot"></div>
+
+    <div
+        id="notificationText"
+        class="notification-text"
+    >
+    </div>
+
+</div>
+
+
+<script>
+
+/*
+==================================================
+PURCHASE SYSTEM
+==================================================
+
+IMPORTANT:
+
+The buttons currently call startPurchase().
+
+Once you connect PayPal/another payment provider,
+call:
+
+showPurchaseNotification("Product Name");
+
+ONLY after the payment has actually succeeded.
+
+That prevents fake purchase notifications.
+==================================================
+*/
+
+
+function startPurchase(productName) {
+
+    /*
+    Temporary message until payment is connected.
+    Replace this with your real checkout link later.
+    */
+
+    alert(
+        productName +
+        "\\n\\nCheckout will be connected here."
+    );
+
+}
+
+
+/*
+Show a genuine purchase notification
+after successful payment.
+*/
+
+function showPurchaseNotification(productName) {
+
+    const notification =
+        document.getElementById(
+            "purchaseNotification"
+        );
+
+    const text =
+        document.getElementById(
+            "notificationText"
+        );
+
+    text.innerHTML =
+        "<strong>Purchase confirmed</strong><br>" +
+        productName +
+        " was just purchased.";
+
+    notification.classList.add("show");
+
+    setTimeout(function() {
+
+        notification.classList.remove("show");
+
+    }, 5000);
+
+}
+
+</script>
+
+
+</body>
+</html>
